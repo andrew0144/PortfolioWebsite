@@ -1,28 +1,31 @@
-<tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
+<tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null" class="bg">
 <main class="main">
-  <header tuiNavigationHeader>
-    <div tuiHeader="h1">
-      <h1 tuiTitle class="tui-space_left-3 tui-space_right-3">
-        <span>Andrew Gross</span>
-        <span style="float: right">
-          <button
-          appearance="secondary"
-          [iconStart]="themeIcon"
-          size="l"
-          tuiIconButton
-          type="button"
-          (click)="darkMode.set(!darkMode())"
-          [style.border-radius.%]="100"
-          >
-          Theme
-          </button>
-        </span>
-        <div tuiSubtitle>Software Engineer</div>
-        <div tuiSubtitle>Bloomington, IN</div>
-      </h1>
-    </div>
-    
-  </header>
+  <div class="site-content">
+    <header tuiNavigationHeader>
+      <div tuiHeader="h1">
+        <h1 tuiTitle class="tui-space_left-3 tui-space_right-3">
+          <span>Andrew Gross</span>
+          <span style="float: right">
+            <button
+            appearance="secondary"
+            [iconStart]="themeIcon"
+            size="l"
+            tuiIconButton
+            type="button"
+            (click)="darkMode.set(!darkMode())"
+            [style.border-radius.%]="100"
+            >
+            Theme
+            </button>
+          </span>
+          <div class="fw-500" tuiSubtitle>Software Engineer</div>
+          <div class="fw-500" tuiSubtitle>Bloomington, IN</div>
+        </h1>
+      </div>
+      
+    </header>
+  </div>
+  
 </main>
 <router-outlet />
 </tui-root>
