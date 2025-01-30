@@ -1,39 +1,28 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <main class="main">
   <header tuiNavigationHeader>
-    <h1 class="name">Andrew Gross</h1>
-    <button
-    appearance="secondary"
-    [iconStart]="themeIcon"
-    size="m"
-    tuiIconButton
-    type="button"
-    (click)="darkMode.set(!darkMode())"
-    [style.border-radius.%]="100"
-    >
-    Theme
-    </button>
+    <div tuiHeader="h1">
+      <h1 tuiTitle class="tui-space_left-3 tui-space_right-3">
+        <span>Andrew Gross</span>
+        <span style="float: right">
+          <button
+          appearance="secondary"
+          [iconStart]="themeIcon"
+          size="l"
+          tuiIconButton
+          type="button"
+          (click)="darkMode.set(!darkMode())"
+          [style.border-radius.%]="100"
+          >
+          Theme
+          </button>
+        </span>
+        <div tuiSubtitle>Software Engineer</div>
+        <div tuiSubtitle>Bloomington, IN</div>
+      </h1>
+    </div>
+    
   </header>
 </main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 <router-outlet />
-
 </tui-root>
