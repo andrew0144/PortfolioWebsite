@@ -1,0 +1,26 @@
+<div class="container tui-space_top-16">
+    <div
+    class="hovershadow"
+    tuiAppearance="floating"
+    tuiCardLarge
+    *ngFor="let card of cards"
+    >
+        <header tuiHeader>
+            <h2 tuiTitle>{{ card.title}}</h2>
+        </header>
+
+        <section>{{ card.content}}</section>
+
+        <footer>
+            <button
+                appearance="secondary"
+                size="l"
+                tuiButton
+                type="button"
+            >
+                See More
+            </button>
+        </footer>
+    </div>
+</div>
+

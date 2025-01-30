@@ -3,10 +3,10 @@
   <div class="site-content">
     <header tuiNavigationHeader>
       <div tuiHeader="h1">
-        <h1 tuiTitle class="tui-space_left-3 tui-space_right-3">
-          <span>Andrew Gross</span>
-          <span style="float: right">
+        <h1 tuiTitle class="tui-space_left-3 tui-space_right-3 tui-space_top-5">
+          <span>Andrew Gross
             <button
+            style="float: right"
             appearance="secondary"
             [iconStart]="themeIcon"
             size="l"
@@ -16,16 +16,15 @@
             [style.border-radius.%]="100"
             >
             Theme
-            </button>
-          </span>
+            </button></span>
           <div class="fw-500" tuiSubtitle>Software Engineer</div>
           <div class="fw-500" tuiSubtitle>Bloomington, IN</div>
         </h1>
       </div>
       
     </header>
+      <app-projects></app-projects>
   </div>
-  
 </main>
 <router-outlet />
 </tui-root>
