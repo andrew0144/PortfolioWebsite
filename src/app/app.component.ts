@@ -2,17 +2,17 @@ import { TuiRoot } from "@taiga-ui/core";
 import { RouterOutlet } from '@angular/router';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {WA_LOCAL_STORAGE, WA_WINDOW} from '@ng-web-apis/common';
-import {TUI_DARK_MODE, TUI_DARK_MODE_KEY, TuiButton, TuiOption} from '@taiga-ui/core';
+import {TUI_DARK_MODE, TUI_DARK_MODE_KEY, TuiButton} from '@taiga-ui/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TuiRoot, TuiButton, TuiOption],
+  imports: [RouterOutlet, TuiRoot, TuiButton],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'PortfolioWebsite';
+  title = 'PortfolioWebsite'; 
 
   private readonly key = inject(TUI_DARK_MODE_KEY);
   private readonly storage = inject(WA_LOCAL_STORAGE);
