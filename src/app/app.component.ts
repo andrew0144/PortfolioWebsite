@@ -16,6 +16,6 @@ export class AppComponent {
   protected readonly darkMode = inject(TUI_DARK_MODE);
 
   get themeIcon(): string {
-    return this.darkMode() ? '@tui.moon' : '@tui.sun';
+    return this.darkMode() ? '@tui.sun' : '@tui.moon';
   }
 }

@@ -1,15 +1,16 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-import { TuiButton, TuiAppearance, TuiTitle } from '@taiga-ui/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { TuiButton, TuiAppearance, TuiTitle, TUI_DARK_MODE } from '@taiga-ui/core';
 import { TuiHeader, TuiCardLarge } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-projects',
-  imports: [TuiButton, TuiHeader, TuiCardLarge, TuiAppearance, TuiTitle, NgFor],
+  imports: [TuiButton, TuiHeader, TuiCardLarge, TuiAppearance, TuiTitle, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.less'
 })
 export class ProjectsComponent {
+  protected readonly darkMode = inject(TUI_DARK_MODE);
   cards = [
     {title: 'Card 1', content: 'Content 1'},
     {title: 'Card 2', content: 'Content 2'},

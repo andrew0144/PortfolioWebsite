@@ -1,6 +1,7 @@
-<div class="container tui-space_top-16">
+<div class="container tui-space_top-10">
     <div
     class="hovershadow"
+    [ngClass]="{'card-bg': this.darkMode()}"
     tuiAppearance="floating"
     tuiCardLarge
     *ngFor="let card of cards"
