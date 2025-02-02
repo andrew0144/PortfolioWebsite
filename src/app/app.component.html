@@ -1,36 +1,66 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null" class="bg">
-<main class="main">
   <app-p5-sketch></app-p5-sketch>
-  <div class="site-content">
-    <header tuiNavigationHeader>
-      <div tuiHeader="h1">
-        <h1 tuiTitle class="tui-space_left-3 tui-space_right-3 tui-space_top-5">
-          <span>Andrew Gross
-            <button
-            class="tui-space_right-6"
-            style="float: right"
-            appearance="secondary"
-            [iconStart]="themeIcon"
-            size="l"
-            tuiIconButton
-            type="button"
-            (click)="darkMode.set(!darkMode())"
-            [style.border-radius.%]="100"
-            >
-            Theme
-            </button></span>
-          <div class="fw-500" tuiSubtitle>Software Engineer</div>
-          <div class="fw-500" tuiSubtitle>Bloomington, IN</div>
-        </h1>
-      </div>
-      
-    </header>
-    <app-about></app-about>
-    <h1 class="tui-space_bottom-10 tui-space_left-3">Experience</h1>
-    <app-experience></app-experience>
-    <h1 class="tui-space_bottom-10 tui-space_left-3">Projects</h1>
-    <app-projects></app-projects>
-  </div>
-</main>
-<router-outlet />
+  <main class="main">
+    <div class="site-content">
+      <header tuiNavigationHeader>
+        <div tuiHeader="h1" class="tui-space_top-5">
+          <h1 tuiTitle>
+            <span
+              >Andrew Gross
+              <button
+                style="float: right"
+                appearance="flat"
+                [iconStart]="themeIcon"
+                size="l"
+                tuiIconButton
+                type="button"
+                (click)="darkMode.set(!darkMode())"
+              ></button>
+              <a
+                href="https://github.com/andrew0144"
+                target="_blank"
+                style="float: right"
+                appearance="flat"
+                [iconStart]="'@tui.github'"
+                size="l"
+                tuiIconButton
+                type="button"
+              >
+              </a>
+              <a
+                href="https://www.linkedin.com/in/andrew-gross-bb0442221/"
+                target="_blank"
+                style="float: right"
+                appearance="flat"
+                [iconStart]="'@tui.linkedin'"
+                size="l"
+                tuiIconButton
+                type="button"
+              >
+              </a>
+              <a
+                href="mailto:acgross0144@gmail.com"
+                target="_blank"
+                style="float: right"
+                appearance="flat"
+                [iconStart]="'@tui.mail'"
+                size="l"
+                tuiIconButton
+                type="button"
+              >
+              </a>
+            </span>
+            <div class="fw-500" tuiSubtitle>Software Engineer</div>
+            <div class="fw-500" tuiSubtitle>Bloomington, IN</div>
+          </h1>
+        </div>
+      </header>
+      <app-about></app-about>
+      <h1 class="tui-space_bottom-10 tui-space_left-3">Experience</h1>
+      <app-experience></app-experience>
+      <h1 class="tui-space_bottom-10 tui-space_left-3">Projects</h1>
+      <app-projects></app-projects>
+    </div>
+  </main>
+  <router-outlet />
 </tui-root>

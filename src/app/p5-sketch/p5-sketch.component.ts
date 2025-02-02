@@ -29,9 +29,10 @@ export class P5SketchComponent implements OnInit {
         let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
         canvas.position(0, 0);
         canvas.style('z-index', '-1');
+        canvas.style('position', 'fixed');
         p.colorMode(p.HSB,360,100,100,100);
         colorStart = 168;//p.random(260);
-        // p.noLoop();
+        p.noLoop();
       };
 
       p.windowResized = () => {
@@ -64,17 +65,11 @@ export class P5SketchComponent implements OnInit {
               conditionalFill(n1);
               drawRect();
             } else if (n1 < 0.66) {
-              p.push();
               conditionalFill(n2);
-              // p.rotate(Math.random() * 2 * p.PI);
               drawRect();
-              p.pop();
             } else {
-              p.push();
               conditionalFill(n3);
-              // p.rotate(Math.random() * 2 * p.PI);
               drawRect();
-              p.pop();
             }
           }
         }
