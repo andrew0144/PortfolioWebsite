@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { TuiButton, TuiAppearance, TuiTitle, TuiSurface, TuiIcon } from '@taiga-ui/core';
-import { TuiHeader, TuiCardLarge, TuiCell } from '@taiga-ui/layout';
+import { Component } from '@angular/core';
+import { TuiTitle} from '@taiga-ui/core';
+import { TuiCell } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-experience',
-  imports: [TuiCell, TuiButton, TuiHeader, TuiCardLarge, TuiAppearance, TuiTitle, TuiSurface, TuiIcon, CommonModule],
+  imports: [TuiCell, TuiTitle, CommonModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.less'
 })

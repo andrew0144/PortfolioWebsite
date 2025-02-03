@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
-  TuiButton,
   TuiAppearance,
   TuiTitle,
-  TuiSurface,
   TUI_DARK_MODE,
 } from '@taiga-ui/core';
 import { TuiHeader, TuiCardLarge } from '@taiga-ui/layout';
@@ -20,12 +18,10 @@ type Card = {
 @Component({
   selector: 'app-projects',
   imports: [
-    TuiButton,
     TuiHeader,
     TuiCardLarge,
     TuiAppearance,
     TuiTitle,
-    TuiSurface,
     TuiChip,
     CommonModule,
   ],
