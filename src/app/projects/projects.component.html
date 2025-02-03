@@ -15,6 +15,7 @@
         <section>{{ card.content}}</section>
 
         <footer>
+            <tui-chip *ngFor="let chip of card.chips" appearance="info" style="margin: 0.5rem">{{ chip }}</tui-chip>
         </footer>
     </a>
 </div>
