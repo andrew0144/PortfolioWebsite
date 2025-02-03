@@ -32,7 +32,7 @@ export class P5SketchComponent implements OnInit {
         canvas.style('position', 'fixed');
         p.colorMode(p.HSB,360,100,100,100);
         colorStart = 168;//p.random(260);
-        p.noLoop();
+        // p.noLoop();
       };
 
       p.windowResized = () => {
