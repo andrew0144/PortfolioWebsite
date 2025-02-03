@@ -1,6 +1,8 @@
 <div class="container tui-space_top-10">
-    <div
+    <a
     class="offset"
+    [href]="card.link"
+    target="_blank"
     [ngClass]="{'card-bg': this.darkMode()}"
     tuiAppearance="floating"
     tuiCardLarge
@@ -13,15 +15,7 @@
         <section>{{ card.content}}</section>
 
         <footer>
-            <button
-                appearance="secondary"
-                size="l"
-                tuiButton
-                type="button"
-            >
-                See More
-            </button>
         </footer>
-    </div>
+    </a>
 </div>
 
