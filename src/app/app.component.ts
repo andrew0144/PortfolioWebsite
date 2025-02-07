@@ -27,12 +27,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.handleInfoSize();
     window.addEventListener('mousedown', (event: MouseEvent) => {
-      console.log('mouse down');
-      console.log(event.clientX, event.clientY);
-      console.log(((window.innerWidth - 1240) / 2))
       let onCanvas = event.clientX > 0 && event.clientX < ((window.innerWidth - 1240) / 2) && event.clientY > 0 && event.clientY < window.innerHeight;
       if (onCanvas){
-        console.log('interacted with canvas');
         this.interactedWithCanvas = true;
       }
     });
@@ -60,7 +56,6 @@ export class AppComponent implements OnInit {
   }
 
   hasInteractedWithCanvas() {
-    console.log(this.interactedWithCanvas);
     return this.interactedWithCanvas;
   }
   

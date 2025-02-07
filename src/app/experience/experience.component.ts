@@ -22,20 +22,22 @@ import { Card } from '../projects/projects.component';
 export class ExperienceComponent implements OnInit {
   isMobileLayout = window.innerWidth <= 991;
   ngOnInit(): void {
-    window.onresize = () => this.isMobileLayout = window.innerWidth <= 991;
+    window.onresize = () => (this.isMobileLayout = window.innerWidth <= 991);
   }
 
   cards: Card[] = [
     {
       title: 'Top Echelon Software · Software Engineer II',
-      content: 'Implemented two main features, Automations & Sequencing, for Top Echelon’s Applicant Tracking System, TE Recruit. Automations allows users to automate their daiy workflow, giving them the power to create custom triggers and actions. Sequencing allows users to string together a series of Automations, allowing for higher-level automation and streamlining the recruiting process.',
+      content:
+        'Implemented two main features, Automations & Sequencing, for Top Echelon’s Applicant Tracking System, TE Recruit. Automations allows users to automate their daiy workflow, giving them the power to create custom triggers and actions. Sequencing allows users to string together a series of Automations, allowing for higher-level automation and streamlining the recruiting process.',
       link: 'https://www.topechelon.com/',
       date: 'Jun 2023 - Jan 2025',
       chips: ['Angular', 'AngularJS', 'TypeScript', 'Ruby On Rails'],
     },
     {
       title: 'Top Echelon Software · Software Engineer Intern',
-      content: 'Learned to work within an agile team environment, developing and maintaining features for Top Echelon’s Applicant Tracking System, TE Recruit. Built various "Quality of Life" features on the front-end and back-end, squashed numerous bugs, and wrote tests for the application.',
+      content:
+        'Learned to work within an agile team environment, developing and maintaining features for Top Echelon’s Applicant Tracking System, TE Recruit. Built various "Quality of Life" features on the front-end and back-end, squashed numerous bugs, and wrote tests for the application.',
       link: 'https://www.topechelon.com/',
       date: 'Apr 2022 - Jan 2023',
       chips: ['Angular', 'AngularJS', 'TypeScript', 'Ruby On Rails'],

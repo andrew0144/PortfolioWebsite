@@ -15,7 +15,14 @@
         <section>{{ card.content}}</section>
 
         <footer>
-            <tui-chip *ngFor="let chip of card.chips" appearance="info" class="chip">{{ chip }}</tui-chip>
+            <div tuiCell class="project-footer">
+                <div>
+                    <tui-chip *ngFor="let chip of card.chips" appearance="info" class="chip">{{ chip }}</tui-chip>
+                </div>
+                <div *ngIf="!!card.image" class="project-image">
+                    <tui-avatar [round]="false" [size]="'xl'" [src]="card.image" class="image-avatar"></tui-avatar>
+                </div>
+            </div>
         </footer>
     </a>
 </div>
