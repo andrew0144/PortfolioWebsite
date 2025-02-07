@@ -73,7 +73,7 @@ main {
 }
 
 .info-div {
-  z-index: -1;
+  // z-index: -1;
   position:absolute;
   top: 25px;
   left: 25px;
@@ -81,6 +81,20 @@ main {
   span {
     max-width: 100%;
     text-wrap: wrap;
+    color: #ffffff !important;
+  }
+
+  .anna-img {
+    @media @tui-mouse {
+      &:hover {
+          transform: scale(1.00);
+          cursor: pointer;
+      }
+    }
+  
+      &:active {
+          transform: scale(0.95);
+    }
   }
 }
 
@@ -88,6 +102,7 @@ main {
   border-radius: 50%;
   width: 100px;
   height: auto;
+  background-color: var(--tui-background-base);
 }
 
 .multiline {
@@ -105,6 +120,7 @@ main {
 .blur {
   backdrop-filter: blur(1rem);
   background: var(--tui-background-neutral-1);
+  color: var(--tui-text-primary);
 }
 
 .name {
@@ -120,7 +136,8 @@ main {
 .scale {
     @media @tui-mouse {
         &:hover {
-            transform: scale(1.15);
+            transform: scale(1.05);
+            cursor: pointer;
         }
     }
 

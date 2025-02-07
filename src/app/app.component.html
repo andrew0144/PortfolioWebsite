@@ -1,9 +1,11 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null" class="bg">
   <app-p5-sketch></app-p5-sketch>
-  <div class="spotlight"></div>
   <div class="info-div" id="info-div">
-    <img src="anna.jpg" class="anna-img" />
-    <span tuiMessage appearance="floating" class="multiline">Try clicking and dragging in the blue area..</span>
+    <img src="anna.png" class="anna-img blur scale" (click)="toggleShowText()" />
+    <div tuiTitle *ngIf="showText">
+      <span tuiMessage class="blur fw-500">Anna says:</span>
+      <span tuiMessage class="multiline blur fw-500">Try clicking and dragging in the blue area..</span>
+    </div>
   </div>
   <main class="main">
     <div class="site-content">
