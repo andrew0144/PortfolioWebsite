@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     this.handleInfoSize();
     window.addEventListener('mousedown', (event: MouseEvent) => {
       let onCanvas = event.clientX > 0 && event.clientX < ((window.innerWidth - 1240) / 2) && event.clientY > 0 && event.clientY < window.innerHeight;
+      onCanvas = onCanvas || event.clientX < window.innerWidth && event.clientX > (((window.innerWidth - 1240) / 2) + 1240) && event.clientY > 0 && event.clientY < window.innerHeight;
       if (onCanvas){
         this.interactedWithCanvas = true;
       }
