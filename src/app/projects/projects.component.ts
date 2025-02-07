@@ -8,11 +8,12 @@ import {
 import { TuiHeader, TuiCardLarge } from '@taiga-ui/layout';
 import { TuiChip } from '@taiga-ui/kit';
 
-type Card = {
+export type Card = {
   title: string;
   content: string;
   link: string;
   chips?: string[];
+  date?: string;
 };
 
 @Component({
@@ -36,7 +37,7 @@ export class ProjectsComponent {
       content:
         'A spunky multiplayer word game made using the Google Trends API, where you attempt to pair a word with the prompt in order to create the most trending phrase.',
       link: 'http://trendwars.net',
-      chips: ['React', 'Python', 'HTML & CSS', 'Javascript'],
+      chips: ['React', 'Python', 'JavaScript'],
     },
     {
       title: 'Data Stream',
@@ -56,7 +57,7 @@ export class ProjectsComponent {
       content:
         'A song lyrics text generator that uses Markov chains to combine the styles of any musician or body of text you input.',
       link: 'https://github.com/andrew0144/markov_lyrics',
-      chips: ['React', 'Python', 'Flask', 'HTML & CSS', 'Javascript'],
+      chips: ['React', 'Python', 'Flask', 'JavaScript'],
     },
     {
       title: '8 Puzzle Solver',
@@ -70,7 +71,7 @@ export class ProjectsComponent {
       content:
         'My new and improved portfolio website. Made using Angular/TypeScript, Taiga UI, p5.js, HTML and Less (CSS Preprocessor).',
       link: 'https://github.com/andrew0144/PortfolioWebsite',
-      chips: ['Angular', 'TypeScript', 'Taiga UI', 'p5.js', 'HTML', 'Less'],
+      chips: ['Angular', 'TypeScript', 'Taiga UI', 'p5.js'],
     },
   ];
 }

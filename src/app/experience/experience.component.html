@@ -1,37 +1,26 @@
-<section>
-    <div tuiCell>
-        <div tuiTitle>
-            Top Echelon Software
-            <div tuiSubtitle>
-                Jun 2023 - Jan 2025 
-            </div>
-        </div>
-        <div tuiTitle>
-            Software Engineer II
-        </div>
+<section class="experience tui-space_bottom-5">
+  <a
+    [href]="card.link"
+    target="_blank"
+    tuiCell
+    tuiAppearance="flat"
+    class="tui-space_vertical-4 overlay"
+    *ngFor="let card of cards"
+  >
+    <div tuiTitle>
+      {{ card.title }}
+      <div tuiSubtitle>
+        {{ card.date }}
+      </div>
     </div>
-    <div tuiCell>
-        <div tuiTitle>
-            Top Echelon Software
-            <div tuiSubtitle>
-                Apr 2022 - Jan 2023
-            </div>
-        </div>
-        <div tuiTitle>
-            Software Engineer Intern
-        </div>
-    </div>
-    <div tuiCell>
-        <div tuiTitle>
-            Case Western Reserve University
-            <div tuiSubtitle>
-                Aug 2019 - May 2023
-            </div>
-        </div>
-        <div tuiTitle>
-            <div>
-                Bachelor of Arts in Computer Science and Cognitive Science
-            </div>
-        </div>
-    </div>
+
+    <footer>
+      <tui-chip
+        *ngFor="let chip of card.chips"
+        appearance="info"
+        style="margin: 0.5rem"
+        >{{ chip }}</tui-chip
+      >
+    </footer>
+ </a>
 </section>

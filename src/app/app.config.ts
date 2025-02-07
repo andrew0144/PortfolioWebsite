@@ -8,3 +8,5 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [provideAnimations(), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), NG_EVENT_PLUGINS]
 };
+
+// document.getElementsByTagName("html")[0].style.cursor = "guitar_pixelated.png, auto";

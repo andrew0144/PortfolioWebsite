@@ -5,7 +5,12 @@
   // --tui-font-text: "Source Code Pro", monospace;
   // --tui-font-heading: "Source Code Pro", monospace;
   font-optical-sizing: auto;
+  // cursor: none !important;
 }
+
+// a:hover {
+//   cursor: none !important;
+// }
 
 .source-code-pro {
   font-family: "Source Code Pro", serif;
@@ -77,16 +82,102 @@ main {
   box-shadow: var(--tui-shadow-medium-hover);
 }
 
-@media screen and (max-width: 650px) {
-  // .content {
-  //   flex-direction: column;
-  //   width: max-content;
-  // }
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
 
-  // .divider {
-  //   height: 1px;
-  //   width: 100%;
-  //   background: var(--red-to-pink-to-purple-horizontal-gradient);
-  //   margin-block: 1.5rem;
-  // }
+.scale {
+    @media @tui-mouse {
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.overlay {
+    &::after {
+        opacity: 0;
+        background: linear-gradient(
+            -45deg,
+            #a1a1b3 0.36%,
+            #d4d1d8 46.96%,
+            #f7fafa 67.14%,
+            #d4d1d8 83.19%,
+            #a1a1b3 93.03%
+        );
+    }
+
+    @media @tui-mouse {
+        &:hover::after {
+            opacity: 0.5;
+        }
+    }
+
+    &:active::after {
+        opacity: 1;
+    }
+}
+
+.highlight {
+    @media @tui-mouse {
+        &:hover::before {
+            backdrop-filter: brightness(1.1);
+        }
+    }
+
+    &:active::before {
+        backdrop-filter: brightness(0.9);
+    }
+}
+
+.offset:hover {
+    transform: translate3d(0, -0.25rem, 0);
+}
+
+.background {
+    &::after {
+        background: url('/assets/images/not-found.svg') top;
+        background-size: 300%;
+    }
+
+    &:hover::after {
+        transform: scale(1.15);
+    }
+}
+
+.shadow:hover {
+    box-shadow: var(--tui-shadow-small-hover);
+}
+
+.card-bg:hover {
+    background-color: var(--tui-background-neutral-1-hover);
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform .1s;
+}
+
+.cursor {
+  top: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 999;
+}
+
+img {
+  max-width:100%;
+  height:auto;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    width: max-content;
+  }
 }

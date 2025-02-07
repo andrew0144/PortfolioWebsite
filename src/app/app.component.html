@@ -1,5 +1,8 @@
 <tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null" class="bg">
   <app-p5-sketch></app-p5-sketch>
+  <!-- <div class="cursor" id="cursor">
+    <img src="guitar_pixelated_shadow.png" alt="guitar cursor" />
+  </div> -->
   <main class="main">
     <div class="site-content">
       <header tuiNavigationHeader>
@@ -13,7 +16,7 @@
                 [iconStart]="themeIcon"
                 size="l"
                 tuiIconButton
-                type="button"
+
                 (click)="darkMode.set(!darkMode())"
               ></button>
               <a
