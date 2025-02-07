@@ -52,6 +52,9 @@ export class AppComponent implements OnInit {
     this.showText = !this.showText;
     if(!!this.showText){
       this.toggledCount++;
+      if(this.toggledCount % 3 === 0){
+        this.interactedWithCanvas = false;
+      }
     }
     this.handleInfoSize();
   }
