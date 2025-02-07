@@ -6,23 +6,26 @@ import {TuiHeader} from '@taiga-ui/layout';
 import { ProjectsComponent } from "./projects/projects.component";
 import { ExperienceComponent } from "./experience/experience.component";
 import { P5SketchComponent } from "./p5-sketch/p5-sketch.component";
+import { TuiMessage } from "@taiga-ui/kit";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TuiRoot, TuiButton, TuiHeader, TuiAppearance, TuiTitle, ProjectsComponent, ExperienceComponent, P5SketchComponent],
+  imports: [RouterOutlet, TuiRoot, TuiButton, TuiHeader, TuiAppearance, TuiTitle, TuiMessage, ProjectsComponent, ExperienceComponent, P5SketchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   protected readonly darkMode = inject(TUI_DARK_MODE);
-  cursor!: HTMLElement;
+  infoDiv!: HTMLElement;
   ngOnInit() {
-    this.cursor = document.getElementById('cursor') as HTMLElement;
-    document.addEventListener('mousemove', (e) => {
-      this.cursor.style.left = (e.pageX - 60) + 'px';
-      this.cursor.style.top = (e.pageY - 60) + 'px';
-    });
+    this.infoDiv = document.getElementById('info-div') as HTMLElement;
+    if (this.infoDiv) {
+      this.infoDiv.style.maxWidth = ((window.innerWidth - 1240) / 2 ) - 75 + 'px';
+      window.addEventListener('resize', () => {
+        this.infoDiv.style.maxWidth = ((window.innerWidth - 1240) / 2 ) - 75 + 'px';
+      });
+    }
   }
 
   get themeIcon(): string {

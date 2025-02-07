@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:not(a) {
+  user-select: none;
+}
+
 p {
   margin: 0;
   color: var(--gray-700);
@@ -59,7 +63,6 @@ main {
 }
 
 .site-content {
-  z-index: 1;
   min-height: 100vh;
   background-color: var(--tui-background-base);
   // box-shadow: var(--tui-shadow-medium);
@@ -67,6 +70,36 @@ main {
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.info-div {
+  z-index: -1;
+  position:absolute;
+  top: 25px;
+  left: 25px;
+
+  span {
+    max-width: 100%;
+    text-wrap: wrap;
+  }
+}
+
+.anna-img {
+  border-radius: 50%;
+  width: 100px;
+  height: auto;
+}
+
+.multiline {
+  white-space: initial;
+}
+
+:not(.site-content *){
+  cursor: crosshair;
+}
+
+.site-content:hover {
+  cursor: default;
 }
 
 .blur {
@@ -155,21 +188,6 @@ main {
     background-color: var(--tui-background-neutral-1-hover);
 }
 
-.cursor {
-  position: fixed;
-  left: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  transition: transform .1s;
-}
-
-.cursor {
-  top: 0;
-  width: 120px;
-  height: 120px;
-  z-index: 999;
-}
-
 img {
   max-width:100%;
   height:auto;
@@ -177,6 +195,12 @@ img {
 
 .chip {
   margin: 0.5rem;
+}
+
+@media screen and (max-width: 1550px) {
+  .info-div {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {

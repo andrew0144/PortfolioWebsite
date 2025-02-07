@@ -21,23 +21,48 @@ export class P5SketchComponent implements OnInit {
 
   private createCanvas(): void {
     this.p5Instance = new p5((p: p5) => {
-      let rez = 0.02;
-      let size = 25;
+      let rez = 0.03;
+      let size = 15;
       let colorStart = 0;
+      let scale = 2;
+      let img: p5.Image;
+
+      p.preload = () => {
+        img = p.loadImage('guitar_pixelated_shadow.png');
+      }
 
       p.setup = () => {
         let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
         canvas.position(0, 0);
-        canvas.style('z-index', '-1');
+        // canvas.style('z-index', '-1');
         canvas.style('position', 'fixed');
+        canvas.style('z-index', '-1');
         p.colorMode(p.HSB,360,100,100,100);
         colorStart = 168;//p.random(260);
-        // p.noLoop();
+        p.noLoop();
+        p.cursor(p.CROSS, 10, 10);
       };
 
       p.windowResized = () => {
         p.resizeCanvas(window.innerWidth, window.innerHeight);
       }
+
+      p.mousePressed = () => {
+        p.fill(p.floor(100 - (p.noise(p.mouseX * rez, p.mouseY * rez) * 100)) + colorStart, 100, 100, 100);
+        // p.ellipse(p.mouseX, p.mouseY, size * (scale * 1.5), size * (scale * 1.5));
+        // p.image(img, p.mouseX - size * scale, p.mouseY - size * scale, size * scale * 4, size * scale * 4);
+      };
+
+      p.mouseDragged = () => {
+        p.fill(p.floor(100 - (p.noise(p.mouseX * rez, p.mouseY * rez) * 100)) + colorStart, 100, 100, 100);
+        p.rect(p.mouseX - size, p.mouseY - size, size * scale, size * scale);
+      }
+      // p.mouseDragged = () => {
+      //   p.fill(p.floor((p.noise(p.mouseX * rez, p.mouseY * rez) * 100)) + colorStart, 100, 100, 100);
+      //   p.rect(p.mouseX - size, p.mouseY - size, size * scale, size * scale);
+      // }
+
+
 
       p.draw = () => {
         p.background(0);
@@ -74,6 +99,12 @@ export class P5SketchComponent implements OnInit {
           }
         }
 
+        // p.textSize(16);
+        // p.fill(255);
+        // p.stroke(0);
+        // p.strokeWeight(4);
+        // p.text('Try clicking and dragging on the sides...', 20, 20);
+        // p.noStroke();
       };
     }, this.sketchContainer.nativeElement);
   }
