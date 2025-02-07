@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TuiTitle, TuiAppearance } from '@taiga-ui/core';
 import { TuiCell } from '@taiga-ui/layout';
 import { TuiChip } from '@taiga-ui/kit';
@@ -19,7 +19,12 @@ import { Card } from '../projects/projects.component';
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.less',
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit {
+  isMobileLayout = window.innerWidth <= 991;
+  ngOnInit(): void {
+    window.onresize = () => this.isMobileLayout = window.innerWidth <= 991;
+  }
+
   cards: Card[] = [
     {
       title: 'Top Echelon Software · Software Engineer II',

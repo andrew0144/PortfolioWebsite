@@ -175,9 +175,32 @@ img {
   height:auto;
 }
 
-@media screen and (max-width: 650px) {
+.chip {
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    // flex-direction: column;
+    // width: max-content;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chip {
+    font-size: small;
+    margin: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .container {
     flex-direction: column;
-    width: max-content;
+    // width: max-content;
+    grid-template-columns: 1fr;
+  }
+
+  .chip {
+    font-size: smaller;
+    margin: 0.25rem;
   }
 }

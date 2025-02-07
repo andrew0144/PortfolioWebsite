@@ -14,11 +14,11 @@
       </div>
     </div>
 
-    <footer>
+    <footer *ngIf="!isMobileLayout">
       <tui-chip
         *ngFor="let chip of card.chips"
         appearance="info"
-        style="margin: 0.5rem"
+        class="experience-chip chip"
         >{{ chip }}</tui-chip
       >
     </footer>
