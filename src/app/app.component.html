@@ -2,9 +2,18 @@
   <app-p5-sketch></app-p5-sketch>
   <div class="info-div" id="info-div">
     <img src="anna.png" class="anna-img blur scale" (click)="toggleShowText()" />
-    <div tuiTitle *ngIf="showText">
-      <span tuiMessage class="blur fw-500">Anna says:</span>
-      <span tuiMessage class="multiline blur fw-500">Try clicking and dragging in the blue area..</span>
+    <div tuiTitle *ngIf="showText && (toggledCount % 3) === 0">
+      <span tuiMessage class="blur fw-500"  [@tuiScaleIn]="getAnimation(1000)">Anna says:</span>
+      <span tuiMessage class="multiline blur fw-500"  [@tuiScaleIn]="getAnimation(1000)">Hey! Try clicking and dragging in the blue area..</span>
+      <span tuiMessage class="multiline blur fw-500" *ngIf="hasInteractedWithCanvas()" [@tuiScaleIn]="getAnimation(1000)">That was pretty cool, right? You should give me a treat..</span>
+    </div>
+    <div tuiTitle *ngIf="showText && (toggledCount % 3) === 1">
+      <span tuiMessage class="blur fw-500"  [@tuiScaleIn]="getAnimation(1000)">Anna says:</span>
+      <span tuiMessage class="multiline blur fw-500" *ngIf="hasInteractedWithCanvas()" [@tuiScaleIn]="getAnimation(1000)">Where's my treat? Stupid human..</span>
+    </div>
+    <div tuiTitle *ngIf="showText && (toggledCount % 3) === 2">
+      <span tuiMessage class="blur fw-500"  [@tuiScaleIn]="getAnimation(1000)">Anna says:</span>
+      <span tuiMessage class="multiline blur fw-500" *ngIf="hasInteractedWithCanvas()" [@tuiScaleIn]="getAnimation(1000)">GIVE ME A TREAT ALREADY!!</span>
     </div>
   </div>
   <main class="main">

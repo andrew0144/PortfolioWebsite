@@ -57,12 +57,6 @@ export class P5SketchComponent implements OnInit {
         p.fill(p.floor(100 - (p.noise(p.mouseX * rez, p.mouseY * rez) * 100)) + colorStart, 100, 100, 100);
         p.rect(p.mouseX - size, p.mouseY - size, size * scale, size * scale);
       }
-      // p.mouseDragged = () => {
-      //   p.fill(p.floor((p.noise(p.mouseX * rez, p.mouseY * rez) * 100)) + colorStart, 100, 100, 100);
-      //   p.rect(p.mouseX - size, p.mouseY - size, size * scale, size * scale);
-      // }
-
-
 
       p.draw = () => {
         p.background(0);
@@ -98,13 +92,6 @@ export class P5SketchComponent implements OnInit {
             }
           }
         }
-
-        // p.textSize(16);
-        // p.fill(255);
-        // p.stroke(0);
-        // p.strokeWeight(4);
-        // p.text('Try clicking and dragging on the sides...', 20, 20);
-        // p.noStroke();
       };
     }, this.sketchContainer.nativeElement);
   }
